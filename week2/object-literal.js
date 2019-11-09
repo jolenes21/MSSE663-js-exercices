@@ -16,7 +16,7 @@
    }
  };
  
-class monkey {
+class monkeys {
    constructor(type, diet, age) {
       this.type = type;
       this.diet = diet;
@@ -24,6 +24,6 @@ class monkey {
    }
 }
 
-monkey.prototype.behaviorEats = function() {
+monkeys.prototype.behaviorEats = function() {
    return "This monkey eats " + diet + ".";
 }
