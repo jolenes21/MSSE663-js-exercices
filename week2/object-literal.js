@@ -6,3 +6,24 @@
  * #5 Convert the object literal to an Class
  * #6 Then call its method and output to the console.
  */
+
+ let monkey = {
+   type: "mammal",
+   diet: "fruit",
+   age: "20",
+   behaviorEats: function() {
+      return "This monkey eats " + diet + ".";
+   }
+ };
+ 
+class monkey {
+   constructor(type, diet, age) {
+      this.type = type;
+      this.diet = diet;
+      this.age = age;
+   }
+}
+
+monkey.prototype.behaviorEats = function() {
+   return "This monkey eats " + diet + ".";
+}
