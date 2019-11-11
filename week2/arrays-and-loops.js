@@ -41,7 +41,7 @@ console.log(
 
 // #3 Filter the output array from #2.
 function oldOnesOnly(arr) {
-	let filter = arr.map(a => a.age > 50);
+	let filter = arr.filter(a => a.age > 50).map(b => b.age);
 	return filter;	
 }
 console.log(

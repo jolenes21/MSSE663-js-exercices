@@ -12,18 +12,29 @@
    diet: "fruit",
    age: "20",
    behaviorEats: function() {
-      return "This monkey eats " + diet + ".";
+      return "This monkey eats " + this.diet + ".";
+   },
+   behaviorAge: function() {
+      return "This monkey is " + this.age + "years old.";
    }
  };
  
+ console.log(monkey.behaviorEats()
+ );
+
 class monkeys {
    constructor(type, diet, age) {
       this.type = type;
       this.diet = diet;
       this.age = age;
    }
+   behaviorEats() {
+      return "This monkey eats " + this.diet + ".";
+   }
+   behaviorAge() {
+      return "This monkey is " + this.age + " years old.";
+   }
 }
 
-monkeys.prototype.behaviorEats = function() {
-   return "This monkey eats " + diet + ".";
-}
+console.log(new monkeys("mammal","fruit", 20).behaviorAge());
+
