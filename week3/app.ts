@@ -1,10 +1,10 @@
 export interface Matchee {
     username: string;
-    interestedIn: Promise<string>;
+    interestedIn: Array<string>;
     age: number;
     status: Promise<boolean>;
     getStatus: (status: boolean) => Promise<boolean>;
-    getInterestedIn: (interestedIn: string) => { array };
+    getInterestedIn: () => Array<string>
 }
 
 export class Cupid implements Matchee {
@@ -13,7 +13,7 @@ export class Cupid implements Matchee {
     });
     constructor(
         public username: string,
-        public interestedIn: string,
+        public interestedIn: Array<string>,
         public age: number,
     ){
         this.username = username;
@@ -24,8 +24,7 @@ export class Cupid implements Matchee {
         return await this.status;
         }
     
-    
-    async getInterestedIn(): array {
-        return await this.interestedIn;
+    getInterestedIn(): Array<string> {
+        return this.interestedIn;
     }
 } 
