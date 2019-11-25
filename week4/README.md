@@ -1,4 +1,3 @@
-# Week 4
 # Week 4 - Spread vs Rest Operators
 
 NOTE: Be sure to complete the reading to understand how to complete these exercises.
