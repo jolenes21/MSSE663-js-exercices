@@ -12,7 +12,7 @@ export const newNumbers = numbers2.map(number => number);
 console.log(newNumbers);
 
 
-// #2 Combining arrays  <--JSL: This returns array item count of 5 for some reason?
+// #2 Combining arrays  <--JSL: This returns array item count for some reason?
 export const winners = ['first'];
 export const runnerUps = ['second', 'third', 'fourth', 'fifth'];
 
