@@ -73,16 +73,9 @@ console.log(originalUpdates); //<--JSL: Added console log
 
 // refactor here
 
-/* export const newUpdates = data.map(task => {
-  if (task.id == 1) {
-    return Object.assign(task, 'Do the other thing... again');
-  }
-  return task;
-}); */
-
 export const newUpdates = (update: any,...data: any)=>{
   data[update.id] = update;
   return data;
 };
 
-console.log(newUpdates); //<--JSL: Added console log
+console.log(newUpdates(update,...data)); //<--JSL: Added console log
