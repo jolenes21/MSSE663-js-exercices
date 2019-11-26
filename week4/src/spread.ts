@@ -11,26 +11,25 @@ export const numbers2 = [...numbers];
 export const newNumbers = numbers2.map(number => number);
 console.log(newNumbers);
 
-
-// #2 Combining arrays  <--JSL: This returns array item count for some reason?
-export const winners = ['first'];
-export const runnerUps = ['second', 'third', 'fourth', 'fifth'];
+// #2 Combining arrays  <--JSL: This returns array item count of 5 for some reason?
+export const winners = ["first"];
+export const runnerUps = ["second", "third", "fourth", "fifth"];
 
 export const originalContenders = runnerUps.unshift(winners[0]);
 console.log(originalContenders);
 
 // refactor here
 
-export const newContenders = [winners,...runnerUps];
+export const newContenders = [winners, ...runnerUps];
 console.log(newContenders);
 
 // #3 Combining objects
 export const bob = {
-  man: 'Bob'
+  man: "Bob"
 };
 
 export const kyle = {
-  boy: 'Kyle'
+  boy: "Kyle"
 };
 
 export const originalPersons = Object.assign(bob, kyle);
@@ -38,28 +37,28 @@ console.log(originalPersons); //<--JSL: Added console log
 
 // refactor here
 
-export const newPersons = {...bob, ...kyle}
+export const newPersons = { ...bob, ...kyle };
 console.log(newPersons); //<--JSL: Added console log
 
 // #4 Modifying values in arrays of objects
 export const data = [
   {
     id: 0,
-    task: 'Do the thing'
+    task: "Do the thing"
   },
   {
     id: 1,
-    task: 'Do the other thing'
+    task: "Do the other thing"
   },
   {
     id: 2,
-    task: 'Do the last thing'
+    task: "Do the last thing"
   }
 ];
 
 export const update = {
   id: 1,
-  task: 'Do the other thing... again'
+  task: "Do the other thing... again"
 };
 
 export const originalUpdates = data.map(task => {
@@ -73,9 +72,9 @@ console.log(originalUpdates); //<--JSL: Added console log
 
 // refactor here
 
-export const newUpdates = (update: any,...data: any)=>{
+export const newUpdates = (update: any, ...data: any) => {
   data[update.id] = update;
   return data;
 };
 
-console.log(newUpdates(update,...data)); //<--JSL: Added console log
+console.log(newUpdates(update, ...data)); //<--JSL: Added console log
