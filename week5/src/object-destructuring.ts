@@ -1,36 +1,44 @@
-import { expect } from "chai";
-import "mocha";
-import {
-  object,
-  person,
-  job,
-  nestedObject,
-  user,
-  address,
-  id,
-  newObject,
-  welcome,
-  greeting,
-  name
-} from "./object-destructuring";
+// #1 Object Destructuring
+export const object = { name: "elvis", title: "hip swinger" };
 
-describe("Object destructuring tests", () => {
-  it("#1 should have a variable for every property in the given object", () => {
-    expect(person).to.be.equal(object.name);
-    expect(job).to.be.equal(object.title)
-  });
+// deconstruct here
 
-  it("#2 should have a variable for every property in the given nested object", () => {
-    expect(user).to.be.equal(nestedObject.user);
-    expect(address).to.be.equal(nestedObject.address);
-    expect(id).to.be.equal(nestedObject.id);
-  });
+export const { name: person, title: job } = object;
 
-  it("#3 should create a new object given the destrutured variables from the nested object", () => {
-    expect(newObject).to.be.eql(nestedObject);
-  });
+console.log(person); // 'elvis'
+console.log(job); // 'hip swinger'
 
-  it("#4 should construct a statement from the given object", () => {
-    expect(greeting + ', ' + name + '!').to.be.equal("hello, taylor!");
-  });
-});
+// #2 Object Matching: Nested destructuring
+export const nestedObject = {
+  user: "elvis",
+  address: {
+    city: "denver",
+    state: "colorado"
+  },
+  id: 1
+};
+
+// deconstruct here
+
+export const { user: user, address: address, id: id } = nestedObject;
+
+console.log(user); // 'elvis'
+console.log(address); // { city: 'denver', state: 'colorado' }
+console.log(id); // 1
+
+// #4 Create a new object given the destrutured values above
+
+// reconstruct here
+
+export const newObject = { user, address, id };
+
+console.log(newObject);
+
+// #3 Object with key value pairs: construct a statement
+export const welcome = { greeting: "hello", name: "taylor" };
+
+export const { greeting: greeting, name: name } = welcome;
+
+console.log(greeting, ",", name, "!");
+
+// 'hello, taylor!'
